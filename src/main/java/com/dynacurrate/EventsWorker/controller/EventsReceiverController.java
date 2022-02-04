@@ -17,7 +17,7 @@ public class EventsReceiverController {
     @Autowired
     private EventsServices eventsServices;
 
-    @RabbitListener(queues = "queue.name")
+    @RabbitListener(queues = "rabbit_queue")
     public void eventReceiver(Event event) {
         eventsServices.saveEvent(event);
     }
