@@ -1,7 +1,7 @@
 package com.dynacurrate.EventsWorker.controller;
 
 import com.dynacurrate.EventsWorker.models.Event;
-import com.dynacurrate.EventsWorker.services.EventsServices;
+import com.dynacurrate.EventsWorker.services.EventsService;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +15,11 @@ public class EventsReceiverController {
     Environment env;
 
     @Autowired
-    private EventsServices eventsServices;
+    private EventsService eventsService;
 
-    @RabbitListener(queues = "rabbit_queue")
+    @RabbitListener(queues = "events_queue")
     public void eventReceiver(Event event) {
-        eventsServices.saveEvent(event);
+        eventsService.saveEvent(event);
+        System.out.println("Event received: " + event.getEventType());
     }
 }

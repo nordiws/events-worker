@@ -7,12 +7,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EventsServices {
+public class EventsService {
 
     @Autowired
     private EventsRepository eventsRepository;
 
-    public Event saveEvent(Event event) {
-        return eventsRepository.save(event);
+    public void saveEvent(Event event) {
+        try {
+            eventsRepository.save(event);
+            System.out.println("Event saved: " + event.getEventType());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
