@@ -12,14 +12,14 @@ Project created for the backend vacancy challenge ate Dynaccurate.
 
 * Latests Java JDK installed on PC
 * Git
-* Java worker at repository:
-[events-worker](https://github.com/nordiws/events-worker)
+* Main API at repository:
+[user-event-api](https://github.com/nordiws/user-event-api)
 
 ### Cloning
 
 * First clone the project at a CLI:
 ```
-git clone https://github.com/nordiws/user-event-api.git
+git clone https://github.com/nordiws/events-worker.git
 ```
 
 
@@ -28,7 +28,7 @@ git clone https://github.com/nordiws/user-event-api.git
 * How to run the program
 * At a CLI run:
 ```
-cd user-event-api
+cd events-worker
 mvnw spring-boot:run
 ```
 
