@@ -5,14 +5,10 @@ import com.dynacurrate.EventsWorker.services.EventsService;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EventsReceiverController {
-
-    @Autowired
-    Environment env;
 
     @Autowired
     private EventsService eventsService;
